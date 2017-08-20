@@ -138,6 +138,19 @@ function item_intro(callback){
   },0);
 }
 
+function item_outro(callback){
+  jQuery('.item').each(function(index,item){
+    setTimeout(function() {
+      jQuery(item).removeClass('swipe');
+      jQuery(item).removeClass('canHover');
+      jQuery('.description',item).addClass('down');
+    }, 1000*index);
+  });
+  setTimeout(function(){
+    typeof callback == 'function' && callback();
+  },3000)
+}
+
 function events(){
   jQuery('.item').on('mouseenter',function(){
     jQuery('.description',this).addClass('down');
@@ -193,19 +206,6 @@ function events(){
       },500);
     }
   });
-}
-
-function item_outro(callback){
-  jQuery('.item').each(function(index,item){
-    setTimeout(function() {
-      jQuery(item).removeClass('swipe');
-      jQuery(item).removeClass('canHover');
-      jQuery('.description',item).addClass('down');
-    }, 1000*index);
-  });
-  setTimeout(function(){
-    typeof callback == 'function' && callback();
-  },3000)
 }
 
 function change_label_text(content){
