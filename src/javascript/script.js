@@ -1,4 +1,6 @@
 /* Copyright © 2017 Onur Şahin Şentürk - All Rights Reserved */
+var parser = "src/php/parser.php";
+
 var genres = [
   "Low Fantasy",
   "High Fantasy",
@@ -34,7 +36,7 @@ var event_element   = jQuery('#event'),
 
 function get_random_event(){
   jQuery.ajax({
-    url: 'parser.php',
+    url: parser,
     type: 'POST',
     data: {
       address: 'http://www.history.com/this-day-in-history'
@@ -54,19 +56,19 @@ function get_random_event(){
 
 function get_random_villain(){
   jQuery.ajax({
-    url: 'parser.php',
+    url: parser,
     type: 'POST',
     data: {
-      address: 'http://www.ranker.com/crowdranked-list/the-best-movie-villains-of-all-time'
+      address: 'http://www.imdb.com/list/ls000322259/'
     },
     success: function(data){
-      var villains          = jQuery('.listItem__title',data),
+      var villains          = jQuery('.info a[href*="/character/"]',data),
           random            = get_random_item(villains),
           random_href       = jQuery(random).attr('href'),
           random_villain    = jQuery.trim(jQuery(random).text());
 
       villain = random_villain;
-      villain_element.text(villain).wrap('<a href="'+random_href+'" target="_blank"></a>').append('<div class="description down">Villain</div>');
+      villain_element.text(villain).wrap('<a href="http://www.imdb.com'+random_href+'" target="_blank"></a>').append('<div class="description down">Villain</div>');
     }
   });
 }
