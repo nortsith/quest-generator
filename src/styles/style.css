@@ -248,6 +248,13 @@ body{
 .wrapper.fadeIn{
   transform: rotateX(0deg) translate(-50%,-50%);
   opacity:1;
+}
+
+.perspectiveFix{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
   perspective: 3000px;
 }
 
