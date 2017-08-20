@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#303030">
+    <link rel="shortcut icon" href="http://yubfk.com/pp.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js" async></script>
+    <title>Yubkk Quest Generator</title>
+  </head>
+  <body>
+    <section class="header">
+      <div class="logo" content="Quest Generator">
+        <img src="images/logo.png"></img>
+      </div>
+      <div class="dice" content="Dice Roller">
+        <img src="images/d20.png"></img>
+      </div>
+      <div class="generate" content="Generating...">
+        <img src="images/generate.png"></img>
+      </div>
+    </section>
+    <section class="label">
+      <div class="title">
+        <span>Quest Generator</span>
+      </div>
+    </section>
+    <section class="content">
+      <div class="slider">
+        <div class="generator">
+          <div class="center wrapper">
+            <div id="event" class="item"></div>
+            <div id="villain" class="item"></div>
+            <div id="genre" class="item"></div>
+          </div>
+        </div>
+        <div class="diceRoller">
+          <div class="center">
+            <div id="d20" class="die">
+              <div class="dieText">
+                <span>20<span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="loading" class="center"></div>
+    <section class="footer">
+      <div class="copyright">
+        <span>Copyright © 2017 Onur Şahin Şentürk - All Rights Reserved</span>
+      </div>
+    </section>
+  </body>
+</html>

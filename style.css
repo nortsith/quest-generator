@@ -1,0 +1,311 @@
+*{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+  font-family: 'Helvetica';
+  font-weight: 100;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  perspective: 600px;
+}
+
+
+.header{
+  position: relative;
+  width: 100%;
+  height: 10%;
+  top: 0px;
+  background: #303030;
+  z-index: 10;
+}
+
+.logo{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.dice{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  float: right;
+  transform: translateX(-50%) scale(.8);
+  cursor: pointer;
+}
+
+.generate{
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  float: left;
+  left: 0px;
+  cursor: pointer;
+  transform: translateX(50%) scale(.8);
+  transition: all .5s ease-in-out;
+}
+
+.generate.hover{
+  transform: translateX(50%) rotateZ(-180deg);
+}
+
+.logo img, .dice img, .generate img{
+  position: relative;
+  height: 100%;
+}
+
+.label{
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  background: #303030;
+  left: 50%;
+  transform: translateX(-50%) rotateX(-180deg);
+  transform-origin: top;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  transition: all .25s ease;
+  z-index: 9;
+}
+
+.drop{
+  transform: translateX(-50%) rotateX(0deg);
+}
+
+.content{
+  height: 80%;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.slider{
+  height: 100%;
+  width: 200%;
+  transition: all .5s ease;
+}
+
+.generator{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.diceRoller{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.active{
+  transform: translateX(-50%);
+}
+
+.rollerMode{
+  background: #6dce9e;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10%;
+  background: #303030;
+  text-align: center;
+  font-size: 13px;
+  color: #808080;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.copyright, .title, .dieText {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.fadeOut{
+  transition: opacity .5s ease;
+  opacity: 0 !important;
+}
+
+.fadeIn{
+  transition: opacity .5s ease;
+  opacity: 1 !important;
+}
+
+.hide{
+  display: none !important;
+}
+
+.show{
+  display: block !important;
+}
+
+#loading{
+  background: #6dce9e;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  opacity: .8;
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes loading{
+  0%, 100%{
+      transform: translate(-50%,-50%) scale(.0);
+  }
+  50%{
+      transform: translate(-50%,-50%) scale(1);
+  }
+}
+
+.wrapper{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 10px;
+  background: #303030 ;
+  text-align: center;
+  transition: all 1s ease;
+  transform: rotateX(-90deg) translate(-50%,-50%);
+  transform-origin:top;
+  opacity:0;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border-radius: 20px;
+}
+
+.wrapper.fadeIn{
+  transform: rotateX(0deg) translate(-50%,-50%);
+  opacity:1;
+  perspective: 3000px;
+}
+
+.item{
+  transform: translateX(-103%);
+  width: 100%;
+  height: 100px;
+  background:white;
+  float: left;
+  color: #303030;
+  font-size: 20px;
+  line-height: 100px;
+  font-weight: 100;
+  transition: all 1s ease;
+  margin: 5px 0px 5px 0px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.canHover:hover{
+  transform: rotateX(20deg) translateY(2%);
+  transition: all .5s ease;
+}
+
+.swipe{
+  transform: translateX(0%);
+}
+
+.description {
+  position: relative;
+  top: -100px;
+  left: 0px;
+  width: 100%;
+  transition: all .5s ease;
+  transform: translateY(-100%);
+  color: white;
+}
+
+#event .description{
+  background: #6dce9e;
+}
+
+#villain .description{
+  background: #ef7f7f;
+}
+
+#genre .description{
+  background: #83a4e0;
+}
+
+.down{
+  transform: translateY(0%);
+}
+
+@media screen and (max-width:1024px){
+  .wrapper{
+      width: 90%;
+  }
+  .item{
+      font-size: 13px;
+  }
+}
+
+.die{
+  position: relative;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  margin: 5px;
+  float: left;
+  background: #303030;
+  transition: all .5s ease;
+  border-radius: 10px;
+  border: 1px #707070 solid;
+  z-index: 1;
+}
+
+.die:hover{
+  transform: scale(3) rotateZ(0deg);
+  border-radius: 150px;
+  z-index: 9;
+}
+
+.rolling{
+  transform: scale(3) rotateZ(3600deg) !important;
+  transition: all 2s linear;
+}
