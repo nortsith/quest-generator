@@ -82,9 +82,9 @@ function get_random_item(array){
   return array[Math.floor(Math.random()*array.length)];
 }
 
-function load(){
+function load_content(){
   var loading = setInterval(function(){
-    var loaded = is_info_loaded(info) && is_info_loaded(villain) && is_info_loaded(genre);
+    var loaded = is_content_loaded(info) && is_content_loaded(villain) && is_content_loaded(genre);
     if(loaded){
       clearInterval(loading);
       fade_out_element(loading_element,function(){
@@ -102,7 +102,7 @@ function load(){
   },1000*10);
 }
 
-function is_info_loaded(variable){
+function is_content_loaded(variable){
   return typeof variable !== 'undefined';
 }
 
@@ -199,7 +199,7 @@ function events(){
         get_random_event();
         get_random_villain();
         get_random_genre();
-        load();
+        load_content();
       });
       setTimeout(function(){
         generate_button.removeClass('hover');
@@ -216,13 +216,13 @@ function change_label_text(content){
   },500);
 }
 
-function init(){
+function init_app(){
   get_random_event();
   get_random_villain();
   get_random_genre();
-  load();
+  load_content();
   events();
 }
 
-init();
+init_app();
 /* Copyright © 2017 Onur Şahin Şentürk - All Rights Reserved */
