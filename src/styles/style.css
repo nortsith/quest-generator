@@ -181,12 +181,29 @@ body{
 }
 
 #loading{
-  background: #6dce9e;
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+#loading div{
+  position: absolute;
   width: 100px;
   height: 100px;
   border-radius: 100px;
-  opacity: .8;
+  opacity: .5;
+}
+
+.inner{
+  background: #FF5F6D;
   animation-name: loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.outer{
+  background: #FF5F6D;
+  animation-name: loading-reverse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -194,10 +211,19 @@ body{
 
 @keyframes loading{
   0%, 100%{
-      transform: translate(-50%,-50%) scale(.0);
+      transform: translate(-50%,-50%) scale(0);
   }
   50%{
       transform: translate(-50%,-50%) scale(1);
+  }
+}
+
+@keyframes loading-reverse{
+  0%, 100%{
+      transform: translate(-50%,-50%) scale(1);
+  }
+  50%{
+      transform: translate(-50%,-50%) scale(0);
   }
 }
 
@@ -264,15 +290,21 @@ body{
 }
 
 #event .description{
-  background: #6dce9e;
+  background: #00b09b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #villain .description{
-  background: #ef7f7f;
+  background: #FF5F6D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #genre .description{
-  background: #83a4e0;
+  background: #24C6DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .down{
