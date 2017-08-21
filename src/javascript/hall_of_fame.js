@@ -75,7 +75,7 @@ function create_moments(moments){
               '<div class="moment_title">'+moment.title+'</div>'+
               '<div class="moment_game_master"><span>Dungeon Master</span></br>'+moment.game_master+'</div>'+
               '<div class="moment_player"><span>Oyuncu</span></br>'+moment.player+'</div>'+
-              '<div class="moment_description"><span>Açıklama</span></br>'+moment.description+'</div>'+
+              '<div class="moment_description"><span>Hikaye</span></br>'+moment.description+'</div>'+
             '</div>';
   });
   moments_element.append(html);
@@ -86,7 +86,7 @@ function add_moment_locally(moment){
            '<div class="moment_title">'+moment.title+'</div>'+
            '<div class="moment_game_master"><span>Dungeon Master</span></br>'+moment.game_master+'</div>'+
            '<div class="moment_player"><span>Oyuncu</span></br>'+moment.player+'</div>'+
-           '<div class="moment_description"><span>Açıklama</span></br>'+moment.description+'</div>'+
+           '<div class="moment_description"><span>Hikaye</span></br>'+moment.description+'</div>'+
          '</div>';
   moments_element.append(html);
 }
