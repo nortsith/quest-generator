@@ -73,7 +73,7 @@ body{
 }
 
 .generate.hover{
-  transform: translateX(50%) rotateZ(-180deg);
+  transform: rotateZ(-180deg);
 }
 
 .logo img, .dice img, .generate img, .hall img, .add img{
@@ -364,7 +364,7 @@ body{
 
 .moments{
   position: absolute;
-  max-width: 700px;
+  max-width: 300px;
   width: 70%;
   height: 90%;
   left: 50%;
