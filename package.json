@@ -1,0 +1,27 @@
+{
+  "name": "quest-generator",
+  "version": "1.0.0",
+  "description": "Quest Generator for Role Playing Games.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onurssx9/quest-generator.git"
+  },
+  "author": "Onur Şahin Şentürk",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/onurssx9/quest-generator/issues"
+  },
+  "homepage": "https://github.com/onurssx9/quest-generator#readme",
+  "devDependencies": {
+    "browserify-express": "^0.1.4",
+    "express": "^4.15.4",
+    "node.js": "0.0.0",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3"
+  }
+}
