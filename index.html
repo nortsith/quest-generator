@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="src/styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="src/javascript/script.js" async></script>
+    <script src="src/javascript/hall_of_fame.js" async></script>
     <title>Yubkk Quest Generator</title>
   </head>
   <body>
@@ -16,11 +17,17 @@
       <div class="logo" content="Quest Generator">
         <img src="images/logo.png"></img>
       </div>
+      <div class="hall" content="Hall Of Fame">
+        <img src="images/trophy.png"></img>
+      </div>
       <div class="dice" content="Dice Roller">
         <img src="images/d20.png"></img>
       </div>
       <div class="generate" content="Generating...">
         <img src="images/generate.png"></img>
+      </div>
+      <div class="add" content="Add New Moment">
+        <img src="images/add.png"></img>
       </div>
     </section>
     <section class="label">
@@ -36,9 +43,9 @@
               <div id="event" class="item"></div>
               <div id="villain" class="item"></div>
               <div id="genre" class="item"></div>
+            </div>
           </div>
         </div>
-      </div>
         <div class="diceRoller">
           <div class="center">
             <div id="d20" class="die">
@@ -48,11 +55,27 @@
             </div>
           </div>
         </div>
+        <div class="hallOfFame">
+          <div class="moments">
+            <div id="moments" class="perspectiveFix overflow">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div id="loading" class="center">
       <div class="inner"></div>
       <div class="outer"></div>
+    </div>
+    <div id="add" class="hide fadeOut">
+      <div class="blur"></div>
+      <div class="moment">
+        <div class="moment_title"><input id="title" type="text" placeholder="Başlık"></input></div>
+        <div class="moment_game_master"><input id="game_master" type="text" placeholder="Dungeon Master"></input></div>
+        <div class="moment_player"><input id="player" type="text" placeholder="Oyuncu"></input></div>
+        <div class="moment_description"><textarea id="description" type="text" cols="40" rows="5" placeholder="Açıklama"></textarea></div>
+        <div id="add_button"><div class="centertext">Gönder</div></div>
+      </div>
     </div>
     <section class="footer">
       <div class="copyright">

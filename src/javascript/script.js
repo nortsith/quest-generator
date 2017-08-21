@@ -32,6 +32,10 @@ var event_element   = jQuery('#event'),
     d20_element     = jQuery('#d20'),
     d20_text        = jQuery('#d20 span'),
     generate_button = jQuery('.generate'),
+    hall_button     = jQuery('.hall'),
+    blur_element    = jQuery('.blur'),
+    add_element     = jQuery('#add'),
+    moment_button   = jQuery('.add'),
     can_generate    = false;
 
 function get_random_event(){
@@ -162,14 +166,21 @@ function events(){
 
   dice_button.on('click',function(){
     var content = jQuery(this).attr('content');
-    slider_element.addClass('active');
-    content_element.addClass('rollerMode');
+    slider_element.addClass('dice_active').removeClass('hall_active');
+    content_element.addClass('rollerMode').removeClass('hallOfFameMode');
+    change_label_text(content);
+  });
+
+  hall_button.on('click',function(){
+    var content = jQuery(this).attr('content');
+    slider_element.addClass('hall_active').removeClass('dice_active');
+    content_element.addClass('hallOfFameMode');
     change_label_text(content);
   });
 
   logo_element.on('click',function(){
     var content = jQuery(this).attr('content');
-    slider_element.removeClass('active');
+    slider_element.attr('class','slider');
     content_element.attr('class','content');
     change_label_text(content);
   });
@@ -191,7 +202,7 @@ function events(){
       generate_button.addClass('hover');
       can_generate = false;
       var content = jQuery(this).attr('content');
-      slider_element.removeClass('active');
+      slider_element.removeClass('dice_active').removeClass('hall_active');
       content_element.attr('class','content');
       change_label_text(content);
       fade_in_element(loading_element);
@@ -205,6 +216,16 @@ function events(){
         generate_button.removeClass('hover');
       },500);
     }
+  });
+
+  blur_element.on('click',function(){
+    fade_out_element(add_element);
+  });
+
+  moment_button.on('click',function(){
+    var content = jQuery(this).attr('content');
+    change_label_text(content);
+    fade_in_element(add_element);
   });
 }
 
