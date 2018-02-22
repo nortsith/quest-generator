@@ -57,16 +57,16 @@ function get_random_event(){
 
 function get_random_villain(){
   jQuery.ajax({
-    url: parser+'http://www.imdb.com/list/ls000322259/',
+    url: parser+'https://www.ranker.com/crowdranked-list/the-best-movie-villains-of-all-time',
     type: 'POST',
     success: function(data){
-      var villains          = jQuery('.info a[href*="/character/"]',data),
+      var villains          = jQuery('.listItem.listItem__h2 .listItem__title--link',data),
           random            = get_random_item(villains),
           random_href       = jQuery(random).attr('href'),
           random_villain    = jQuery.trim(jQuery(random).text());
 
       villain = random_villain;
-      villain_element.text(villain).wrap('<a href="http://www.imdb.com'+random_href+'" target="_blank"></a>').append('<div class="description down">Villain</div>');
+      villain_element.text(villain).wrap('<a href="'+random_href+'" target="_blank"></a>').append('<div class="description down">Villain</div>');
     }
   });
 }
